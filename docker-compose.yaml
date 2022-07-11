@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  cambios-flaites:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cambios-flaites/sveltekit:v1
+    ports:
+      - '3000:3000'
+      - '24678:24678'
+    volumes:
+      - .:/app
+      - /node_modules
+    command: npm run dev
